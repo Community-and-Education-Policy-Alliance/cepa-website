@@ -1,0 +1,142 @@
+/* ── Reset & Base ───────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout ─────────────────────────────────────── */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+section { padding: 3rem 0; }
+
+/* ── Typography ─────────────────────────────────── */
+h1, h2, h3 { color: #1a5276; line-height: 1.25; }
+h1 { font-size: 2rem; margin-bottom: 0.75rem; }
+h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+p  { margin-bottom: 1rem; }
+
+/* ── Hero ───────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 4rem 0 2.5rem;
+}
+.hero .subtitle {
+  font-size: 1.15rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 1.75rem;
+}
+
+/* ── Buttons ────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  background: #27ae60;
+  color: #fff;
+  padding: 0.85rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: background 0.2s;
+}
+.btn:hover { background: #219a52; }
+
+/* ── Match Banner ───────────────────────────────── */
+.match-banner {
+  background: #1a5276;
+  color: #fff;
+  text-align: center;
+  padding: 1.75rem 1.25rem;
+  border-radius: 8px;
+  margin: 0 0 1rem;
+}
+.match-banner p {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+}
+.match-banner .match-sub {
+  font-size: 0.95rem;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-top: 0.35rem;
+}
+
+/* ── Use of Funds ───────────────────────────────── */
+.use-of-funds h2 { border-bottom: 2px solid #1a5276; padding-bottom: 0.4rem; }
+.use-of-funds h3 { margin-top: 1.5rem; }
+.use-of-funds ul, .use-of-funds ol {
+  margin: 0.75rem 0 1rem 1.5rem;
+}
+.use-of-funds li { margin-bottom: 0.4rem; }
+.use-of-funds hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+/* ── Donate Cards ───────────────────────────────── */
+.donate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+.donate-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+.donate-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.donate-card .card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.donate-card h3 { margin-bottom: 0.4rem; }
+.donate-card p { font-size: 0.9rem; color: #555; margin-bottom: 0.75rem; }
+.donate-card .btn {
+  font-size: 0.9rem;
+  padding: 0.55rem 1.25rem;
+  background: #27ae60;
+}
+.donate-card .btn:hover { background: #219a52; }
+.donate-card .btn.disabled {
+  background: #aaa;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ── Footer ─────────────────────────────────────── */
+footer {
+  background: #f7f7f7;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.7;
+}
+footer strong { color: #1a5276; }
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 600px) {
+  h1 { font-size: 1.5rem; }
+  .hero { padding: 2.5rem 0 1.5rem; }
+  .match-banner p { font-size: 1.1rem; }
+  section { padding: 2rem 0; }
+  .donate-grid { grid-template-columns: 1fr; }
+}
