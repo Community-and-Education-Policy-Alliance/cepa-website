@@ -1,0 +1,6 @@
+name = "cepa-donations"
+main = "src/worker.js"
+compatibility_date = "2026-04-29"
+
+[vars]
+SITE_ORIGIN = "https://cepamd.org"

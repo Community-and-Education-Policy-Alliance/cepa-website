@@ -53,8 +53,8 @@ p  { margin-bottom: 1rem; }
 }
 .btn:hover { background: #219a52; }
 
-/* ── Match Banner ───────────────────────────────── */
-.match-banner {
+/* ── Momentum Banner ────────────────────────────── */
+.momentum-banner {
   background: #002748;
   color: #fff;
   text-align: center;
@@ -62,16 +62,39 @@ p  { margin-bottom: 1rem; }
   border-radius: 8px;
   margin: 0 0 1rem;
 }
-.match-banner p {
+.momentum-banner p {
   font-size: 1.35rem;
   font-weight: 700;
   margin: 0;
 }
-.match-banner .match-sub {
+.momentum-banner .match-sub {
   font-size: 0.95rem;
   font-weight: 400;
   opacity: 0.9;
   margin-top: 0.35rem;
+}
+
+/* ── Progress ───────────────────────────────────── */
+.progress { padding: 1.75rem 0 0.5rem; }
+.progress h2 { margin-bottom: 0.75rem; }
+.milestone-list {
+  list-style: none;
+  border-left: 3px solid #1a5276;
+  padding-left: 1rem;
+}
+.milestone-list li {
+  margin-bottom: 0.65rem;
+  color: #333;
+}
+.milestone-list li::before {
+  content: "✓";
+  color: #27ae60;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+.milestone-list li:last-child::before {
+  content: "→";
+  color: #1a5276;
 }
 
 /* ── Use of Funds ───────────────────────────────── */
@@ -88,6 +111,12 @@ p  { margin-bottom: 1rem; }
 }
 
 /* ── Donate Cards ───────────────────────────────── */
+.trust-line {
+  color: #1a5276;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
 .donate-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -120,6 +149,74 @@ p  { margin-bottom: 1rem; }
   pointer-events: none;
 }
 
+/* ── Monthly Donation Form ──────────────────────── */
+.monthly-form {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+.monthly-form label,
+.monthly-form legend {
+  color: #1a5276;
+  font-weight: 700;
+}
+.amount-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin: 0.4rem 0 1.25rem;
+  max-width: 220px;
+  overflow: hidden;
+}
+.amount-input span {
+  background: #f4f4f4;
+  border-right: 1px solid #ccc;
+  color: #555;
+  padding: 0.75rem;
+}
+.amount-input input {
+  border: none;
+  flex: 1;
+  font: inherit;
+  min-width: 0;
+  padding: 0.75rem;
+}
+.monthly-form fieldset {
+  border: none;
+  margin-bottom: 1.25rem;
+}
+.duration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.duration-grid label {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  color: #222;
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+.duration-grid label:has(input:checked) {
+  border-color: #1a5276;
+  box-shadow: 0 0 0 2px rgba(26,82,118,0.15);
+}
+.monthly-form .btn:disabled {
+  background: #aaa;
+  cursor: wait;
+}
+.form-status {
+  color: #b00020;
+  font-size: 0.9rem;
+  margin: 0.75rem 0 0;
+}
+.form-status.success { color: #1a7f37; }
+
 /* ── Footer ─────────────────────────────────────── */
 footer {
   background: #f7f7f7;
@@ -136,7 +233,7 @@ footer strong { color: #1a5276; }
 @media (max-width: 600px) {
   h1 { font-size: 1.5rem; }
   .hero { padding: 2.5rem 0 1.5rem; }
-  .match-banner p { font-size: 1.1rem; }
+  .momentum-banner p { font-size: 1.1rem; }
   section { padding: 2rem 0; }
   .donate-grid { grid-template-columns: 1fr; }
 }
