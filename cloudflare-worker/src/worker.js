@@ -47,7 +47,7 @@ async function createMonthlyDonation(request, env) {
   const productName = donationProductName(months);
   const checkoutMessage = donationCheckoutMessage(months);
   const siteOrigin = env.SITE_ORIGIN || "https://cepamd.org";
-  const successUrl = `${siteOrigin}/recurring.html?success=1&session_id={CHECKOUT_SESSION_ID}`;
+  const successUrl = `${siteOrigin}/thank-you.html?session_id={CHECKOUT_SESSION_ID}`;
   const cancelUrl = `${siteOrigin}/recurring.html?canceled=1`;
 
   const params = new URLSearchParams();
