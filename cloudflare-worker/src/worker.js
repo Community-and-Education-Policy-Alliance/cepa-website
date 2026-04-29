@@ -44,6 +44,8 @@ async function createMonthlyDonation(request, env) {
   }
 
   const amountInCents = Math.round(amount * 100);
+  const productName = donationProductName(months);
+  const checkoutMessage = donationCheckoutMessage(months);
   const siteOrigin = env.SITE_ORIGIN || "https://cepamd.org";
   const successUrl = `${siteOrigin}/recurring.html?success=1&session_id={CHECKOUT_SESSION_ID}`;
   const cancelUrl = `${siteOrigin}/recurring.html?canceled=1`;
@@ -55,9 +57,10 @@ async function createMonthlyDonation(request, env) {
   params.set("cancel_url", cancelUrl);
   params.set("line_items[0][price_data][currency]", "usd");
   params.set("line_items[0][price_data][unit_amount]", String(amountInCents));
-  params.set("line_items[0][price_data][product_data][name]", "CEPA monthly donation");
+  params.set("line_items[0][price_data][product_data][name]", productName);
   params.set("line_items[0][price_data][recurring][interval]", "month");
   params.set("line_items[0][quantity]", "1");
+  params.set("custom_text[submit][message]", checkoutMessage);
   params.set("metadata[cepa_duration_months]", months);
   params.set("metadata[cepa_monthly_amount_cents]", String(amountInCents));
   params.set("subscription_data[metadata][cepa_duration_months]", months);
@@ -69,6 +72,22 @@ async function createMonthlyDonation(request, env) {
   });
 
   return json({ url: session.url }, request, env);
+}
+
+function donationProductName(months) {
+  if (months === "ongoing") {
+    return "CEPA ongoing monthly donation";
+  }
+
+  return `CEPA monthly donation — ${months} monthly payments`;
+}
+
+function donationCheckoutMessage(months) {
+  if (months === "ongoing") {
+    return "You selected an ongoing monthly donation. You can cancel anytime by contacting CEPA.";
+  }
+
+  return `You selected ${months} monthly payments. CEPA will set this subscription to cancel automatically after ${months} monthly charges.`;
 }
 
 async function handleStripeWebhook(request, env) {
