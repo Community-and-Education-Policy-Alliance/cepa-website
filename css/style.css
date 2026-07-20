@@ -125,6 +125,15 @@ p  { margin-bottom: 1rem; }
   font-weight: 700;
 }
 
+/* ── Summer Fundraiser ──────────────────────────── */
+.fundraiser {
+  background: #f2f7fb;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 2.5rem 0;
+}
+.fundraiser h3 { margin-top: 1.75rem; }
+
 /* ── Donate Cards ───────────────────────────────── */
 .trust-line {
   color: #1a5276;
@@ -162,6 +171,57 @@ p  { margin-bottom: 1rem; }
   background: #aaa;
   cursor: default;
   pointer-events: none;
+}
+
+/* ── Amount Presets & Note (homepage form) ──────── */
+.amount-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 0.75rem;
+  margin: 0.4rem 0 0.75rem;
+}
+.amount-grid button {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  color: #1a5276;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.65rem;
+}
+.amount-grid button.selected {
+  border-color: #1a5276;
+  box-shadow: 0 0 0 2px rgba(26,82,118,0.15);
+}
+.payment-methods {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+}
+.payment-methods .secure-note {
+  color: #555;
+  font-size: 0.82rem;
+  margin-right: 0.35rem;
+}
+.payment-methods .method-pill {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #555;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+}
+.note-input {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  display: block;
+  font: inherit;
+  margin: 0.4rem 0 1.25rem;
+  padding: 0.75rem;
+  width: 100%;
 }
 
 /* ── Monthly Donation Form ──────────────────────── */

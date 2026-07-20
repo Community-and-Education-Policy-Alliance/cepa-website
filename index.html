@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CEPA — Community and Education Policy Alliance</title>
   <meta name="description"
-    content="CEPA filed a formal appeal with the Maryland State Board of Education to overturn the closure of Wootton High School. More than 400 donors have contributed. Donate to fund the legal fight.">
-  <meta property="og:title" content="Donate to the Wootton Legal Fund">
+    content="MCPS tried to end our case before the evidence could be heard. They failed. The Wootton closure challenge now moves to discovery before an independent judge. Donate to the Save Our School Summer Fundraiser.">
+  <meta property="og:title" content="Save Our School Summer Fundraiser — Wootton Legal Fund">
   <meta property="og:description"
-    content="CEPA filed a formal appeal with the Maryland State Board of Education to overturn the closure of Wootton High School. More than 400 donors have contributed. Donate to fund the legal fight.">
+    content="MCPS tried to end our case before the evidence could be heard. They failed. The Wootton closure challenge now moves to discovery before an independent judge. Donate to the Save Our School Summer Fundraiser.">
   <meta property="og:image" content="https://cepamd.org/sw-donate.png">
   <meta property="og:url" content="https://cepamd.org">
   <meta property="og:type" content="website">
@@ -24,9 +24,10 @@
   <section class="hero">
     <div class="container">
       <h1>Community and Education Policy Alliance (CEPA)</h1>
-      <p class="subtitle">Our appeal is now before the Maryland State Board of Education. CEPA is funding the legal
-        challenge to overturn the Board of Education's decision to close Wootton High School — backed by sworn affidavits
-        from more than 300 affected households.</p>
+      <p class="subtitle">MCPS tried to end our case before the evidence could be heard. They failed. The Maryland
+        State Board of Education has denied MCPS's motion to dismiss and referred CEPA's appeal of the Wootton High
+        School closure to an independent Administrative Law Judge — and now comes discovery, the most important and
+        resource-intensive phase yet.</p>
       <p style="margin-top: 0.75rem;"><a href="https://www.savewootton.org" target="_blank" rel="noopener"
           style="color: #1a5276; text-decoration: underline; font-size: 0.95rem;">Learn more at SaveWootton.org</a></p>
     </div>
@@ -35,11 +36,110 @@
   <!-- ════ Momentum Banner ════ -->
   <div class="container">
     <div class="momentum-banner">
-      <p>400+ donors. 300+ household affidavits. Appeal filed.</p>
-      <p class="match-sub">The fight has moved to the Maryland State Board of Education. Your donation supports the legal
-        challenge.</p>
+      <p>490+ donors. 6,000+ petition signers. 300+ household affidavits. Motion to dismiss denied.</p>
+      <p class="match-sub">The case is moving to discovery before an independent judge at the Maryland Office of
+        Administrative Hearings. Your donation funds this next phase.</p>
     </div>
   </div>
+
+  <!-- ════ Donate ════ -->
+  <section id="donate">
+    <div class="container">
+      <h2>How to Donate</h2>
+      <p style="color: #555; font-size: 0.9rem; margin-bottom: 1.25rem;">Stripe is our preferred donation method —
+        fastest for you and lowest fees for us.</p>
+      <p class="trust-line">Recognized by the IRS as a 501(c)(4) social welfare organization &middot; EIN 41-4472442</p>
+
+      <form class="monthly-form donate-form" id="donation-form">
+        <img src="stripe-logo.png" alt="Stripe" style="height: 24px; margin-bottom: 0.75rem; display: block;">
+
+        <label for="donation-amount">Select an amount or enter your own below</label>
+        <div class="amount-grid" id="amount-presets">
+          <button type="button" data-amount="150" class="selected">$150</button>
+          <button type="button" data-amount="250">$250</button>
+          <button type="button" data-amount="500">$500</button>
+          <button type="button" data-amount="1000">$1,000</button>
+        </div>
+        <div class="amount-input">
+          <span>$</span>
+          <input id="donation-amount" name="amount" type="number" min="5" max="10000" step="1" value="150" required>
+        </div>
+
+        <fieldset>
+          <legend>Frequency</legend>
+          <div class="duration-grid">
+            <label>
+              <input type="radio" name="frequency" value="once" checked>
+              <span>One-time</span>
+            </label>
+            <label>
+              <input type="radio" name="frequency" value="monthly">
+              <span>Monthly</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset id="plan-length-fieldset" hidden>
+          <legend>Plan length</legend>
+          <div class="duration-grid">
+            <label>
+              <input type="radio" name="months" value="3">
+              <span>3 months</span>
+            </label>
+            <label>
+              <input type="radio" name="months" value="6" checked>
+              <span>6 months</span>
+            </label>
+            <label>
+              <input type="radio" name="months" value="12">
+              <span>12 months</span>
+            </label>
+            <label>
+              <input type="radio" name="months" value="ongoing">
+              <span>Ongoing</span>
+            </label>
+          </div>
+          <p style="color: #555; font-size: 0.85rem; margin: 0.5rem 0 0;">Fixed-length plans cancel automatically after
+            the last payment. Cancel anytime at <a href="mailto:treasurer@cepamd.org">treasurer@cepamd.org</a>.</p>
+        </fieldset>
+
+        <label for="donation-note">Note (optional) — Wootton alum? Add your class year!</label>
+        <input id="donation-note" name="note" type="text" class="note-input" maxlength="200"
+          placeholder="e.g. Class of 1998">
+
+        <button type="submit" class="btn">Donate by Card</button>
+        <div class="payment-methods">
+          <span class="secure-note">🔒 Secure checkout by Stripe</span>
+          <span class="method-pill">Apple Pay</span>
+          <span class="method-pill">Link</span>
+          <span class="method-pill">Visa</span>
+          <span class="method-pill">Mastercard</span>
+          <span class="method-pill">Amex</span>
+        </div>
+        <p class="form-status" id="donation-form-status" aria-live="polite"></p>
+      </form>
+
+      <h3 style="margin-top: 2rem;">Other ways to give</h3>
+      <div class="donate-grid">
+
+        <div class="donate-card">
+          <img src="venmo-logo.png" alt="Venmo" style="height: 28px; margin-bottom: 0.5rem;">
+          <h3>Venmo</h3>
+          <p>Fast and easy from your phone.</p>
+          <a href="https://venmo.com/u/cepamd" class="btn" target="_blank" rel="noopener">Donate with Venmo</a>
+        </div>
+
+        <div class="donate-card">
+          <img src="paypal-logo.png" alt="PayPal" style="height: 28px; margin-bottom: 0.5rem;">
+          <h3>PayPal</h3>
+          <p>Also accepted (least preferred due to high fees)</p>
+          <a href="https://www.paypal.com/ncp/payment/M5WPY7KGUDLTN" class="btn" target="_blank" rel="noopener">Donate
+            with PayPal</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ════ Progress ════ -->
   <section class="progress">
@@ -51,51 +151,37 @@
         <li>Administrative appeal filed with the Maryland State Board of Education (April 27, 2026) <a
             href="https://drive.google.com/file/d/1IQMDPjKzm7bUsOJytNukOK9nd9ZU6ZSJ/view?usp=sharing" target="_blank"
             rel="noopener">read it</a></li>
-        <li>Next: State Board review and hearing preparation</li>
+        <li>MCPS's motion to dismiss <strong>denied</strong> — appeal referred to an independent Administrative Law
+          Judge at the Maryland Office of Administrative Hearings (July 14, 2026) <a
+            href="https://www.savewootton.org/wootton-closure-challenge-moves-forward-before-independent-alj/"
+            target="_blank" rel="noopener">read the announcement</a></li>
+        <li>Next: scheduling order, discovery, and evidentiary proceedings</li>
       </ul>
+      <p style="color: #555; font-size: 0.9rem; margin-top: 1rem;">As covered by <a
+          href="https://moderatelymoco.com/mcps-bid-to-dismiss-wootton-school-challenge-rejected-as-case-moves-forward-before-administrative-judge/"
+          target="_blank" rel="noopener">Moderately MOCO</a> and <a
+          href="https://bethesdamagazine.com/2026/04/29/moco-school-board-reconsider-move-wootton-high/" target="_blank"
+          rel="noopener">Bethesda Magazine</a>.</p>
     </div>
   </section>
 
-  <!-- ════ Donate ════ -->
-  <section id="donate">
+  <!-- ════ Summer Fundraiser ════ -->
+  <section class="fundraiser">
     <div class="container">
-      <h2>How to Donate</h2>
-      <p style="color: #555; font-size: 0.9rem; margin-bottom: 1.25rem;">Venmo and Stripe are our preferred donation
-        methods — fastest for you and lowest fees for us.</p>
-      <p class="trust-line">Recognized by the IRS as a 501(c)(4) social welfare organization &middot; EIN 41-4472442</p>
-      <div class="donate-grid">
+      <h2>Save Our School Summer Fundraiser</h2>
+      <p>Discovery is next — the most important and resource-intensive phase of the case yet. We're asking every
+        family to give <strong>$150</strong> this summer, with giving levels of <strong>$250, $500, and $1,000</strong>
+        for those who can do more. No contribution is too small.</p>
+      <p><strong>Wootton alumni:</strong> take the class challenge — add your graduation year to the note field in the
+        donation form above (or the payment memo on Venmo and PayPal) and represent your class.</p>
+      <p>You can also show your support with a <strong>$10 yard sign</strong> — details at <a
+          href="https://www.savewootton.org" target="_blank" rel="noopener">SaveWootton.org</a>.</p>
 
-        <div class="donate-card">
-          <img src="venmo-logo.png" alt="Venmo" style="height: 28px; margin-bottom: 0.5rem;">
-          <h3>Venmo</h3>
-          <p>Fast and easy from your phone, low fees for us.</p>
-          <a href="https://venmo.com/u/cepamd" class="btn" target="_blank" rel="noopener">Pay with Venmo</a>
-        </div>
-
-        <div class="donate-card">
-          <img src="stripe-logo.png" alt="Stripe" style="height: 28px; margin-bottom: 0.5rem;">
-          <h3>Credit / Debit Card</h3>
-          <p>Secure one-time credit card payment</p>
-          <a href="https://donate.stripe.com/3cIaEW0M25Lz01hbYCfUQ02" class="btn" target="_blank" rel="noopener">Pay
-            with Card</a>
-        </div>
-
-        <div class="donate-card">
-          <div class="card-icon">🔄</div>
-          <h3>Monthly Giving</h3>
-          <p>Split your donation into monthly payments</p>
-          <a href="recurring.html" class="btn">Set Up Monthly</a>
-        </div>
-
-        <div class="donate-card">
-          <div class="card-icon">🅿️</div>
-          <h3>PayPal</h3>
-          <p>Also accepted (least preferred due to high fees)</p>
-          <a href="https://www.paypal.com/ncp/payment/M5WPY7KGUDLTN" class="btn" target="_blank" rel="noopener">Pay with
-            PayPal</a>
-        </div>
-
-      </div>
+      <h3>Help Fund the Discovery</h3>
+      <p>When community members filed public records requests, MCPS said fulfilling them would cost tens of thousands
+        of dollars. Now the tables have turned: discovery compels MCPS to produce those documents. Your donation
+        directly funds pursuing them — document review, depositions, expert witnesses, and preparation for the
+        evidentiary hearing.</p>
     </div>
   </section>
 
@@ -120,7 +206,7 @@
         <li><span class="board-name">Peng Li</span><span>President</span></li>
         <li><span class="board-name">Claire Matta</span><span>Secretary</span></li>
         <li><span class="board-name">Jocelyn Miller Zeitzoff</span><span>Board Member</span></li>
-        <li><span class="board-name">Elisa Sukhobook</span><span>Vice President</span></li>
+        <li><span class="board-name">Elisa Sukhobok</span><span>Vice President</span></li>
       </ul>
 
       <hr>
@@ -144,8 +230,9 @@
         BryteBridge in completing state and federal nonprofit filings), as well as ongoing legal and advocacy efforts,
         including but not limited to:</p>
       <ul>
-        <li>Attorneys' fees and litigation expenses, including the active appeal before the Maryland State Board of
-          Education</li>
+        <li>Attorneys' fees and litigation expenses, including the active appeal now before an independent
+          Administrative Law Judge at the Maryland Office of Administrative Hearings</li>
+        <li>Discovery costs, including document review, depositions, expert witnesses, and hearing preparation</li>
         <li>Expert analysis and consulting</li>
         <li>Public records and information requests</li>
         <li>Filing and pursuit of state and federal administrative complaints and investigations</li>
@@ -180,12 +267,82 @@
       <p>EIN 41-4472442</p>
       <p>Contributions to CEPA are not tax-deductible as charitable donations.</p>
       <p>Contact: <a href="mailto:board@cepamd.org">board@cepamd.org</a></p>
-      <p>Last updated: April 30, 2026</p>
+      <p>Last updated: July 20, 2026</p>
       <p><a href="https://www.savewootton.org" target="_blank" rel="noopener"
           style="color: #1a5276;">SaveWootton.org</a></p>
     </div>
   </footer>
 
+  <script>
+    const DONATION_API_URL = "https://damp-bird-b203.cepamd.workers.dev/create-donation";
+    const form = document.getElementById("donation-form");
+    const statusEl = document.getElementById("donation-form-status");
+    const amountInput = document.getElementById("donation-amount");
+    const presetButtons = document.querySelectorAll("#amount-presets button");
+    const planFieldset = document.getElementById("plan-length-fieldset");
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("canceled") === "1") {
+      statusEl.textContent = "Checkout was canceled. You can adjust your donation below.";
+    }
+
+    presetButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        amountInput.value = button.dataset.amount;
+        presetButtons.forEach((b) => b.classList.toggle("selected", b === button));
+      });
+    });
+
+    amountInput.addEventListener("input", () => {
+      presetButtons.forEach((b) => b.classList.toggle("selected", b.dataset.amount === amountInput.value));
+    });
+
+    form.addEventListener("change", () => {
+      planFieldset.hidden = form.frequency.value !== "monthly";
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const submitButton = form.querySelector("button[type='submit']");
+      const amount = Number(form.amount.value);
+      const frequency = form.frequency.value;
+
+      statusEl.textContent = "";
+      statusEl.className = "form-status";
+
+      if (!Number.isFinite(amount) || amount < 5 || amount > 10000) {
+        statusEl.textContent = "Enter an amount between $5 and $10,000.";
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Opening Stripe...";
+
+      try {
+        const response = await fetch(DONATION_API_URL, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            amount,
+            frequency,
+            months: frequency === "monthly" ? form.months.value : undefined,
+            note: form.note.value,
+          }),
+        });
+        const data = await response.json();
+
+        if (!response.ok || !data.url) {
+          throw new Error(data.error || "Unable to open Stripe Checkout.");
+        }
+
+        window.location.href = data.url;
+      } catch (error) {
+        statusEl.textContent = error.message;
+        submitButton.disabled = false;
+        submitButton.textContent = "Donate by Card";
+      }
+    });
+  </script>
 </body>
 
 </html>
