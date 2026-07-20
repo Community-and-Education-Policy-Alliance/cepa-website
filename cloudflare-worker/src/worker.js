@@ -10,6 +10,10 @@ export default {
     }
 
     try {
+      if (url.pathname === "/create-donation" && request.method === "POST") {
+        return await createDonation(request, env);
+      }
+
       if (url.pathname === "/create-monthly-donation" && request.method === "POST") {
         return await createMonthlyDonation(request, env);
       }
@@ -29,6 +33,68 @@ export default {
     }
   },
 };
+
+async function createDonation(request, env) {
+  const body = await request.json();
+  const amount = Number(body.amount);
+  const frequency = String(body.frequency || "");
+  const months = String(body.months || "");
+  const note = typeof body.note === "string" ? body.note.trim().slice(0, 200) : "";
+
+  if (!Number.isFinite(amount) || amount < 5 || amount > 10000) {
+    return json({ error: "Enter an amount between $5 and $10,000." }, request, env, 400);
+  }
+
+  if (frequency !== "once" && frequency !== "monthly") {
+    return json({ error: "Choose one-time or monthly giving." }, request, env, 400);
+  }
+
+  if (frequency === "monthly" && !ALLOWED_MONTHS.has(months)) {
+    return json({ error: "Choose a valid plan length." }, request, env, 400);
+  }
+
+  const amountInCents = Math.round(amount * 100);
+  const siteOrigin = env.SITE_ORIGIN || "https://cepamd.org";
+
+  const params = new URLSearchParams();
+  params.set("submit_type", "donate");
+  params.set("success_url", `${siteOrigin}/thank-you.html?session_id={CHECKOUT_SESSION_ID}`);
+  params.set("cancel_url", `${siteOrigin}/?canceled=1#donate`);
+  params.set("line_items[0][price_data][currency]", "usd");
+  params.set("line_items[0][price_data][unit_amount]", String(amountInCents));
+  params.set("line_items[0][quantity]", "1");
+
+  if (note) {
+    params.set("metadata[cepa_note]", note);
+  }
+
+  if (frequency === "once") {
+    params.set("mode", "payment");
+    params.set("line_items[0][price_data][product_data][name]", "CEPA one-time donation (Save Wootton)");
+    if (note) {
+      params.set("payment_intent_data[metadata][cepa_note]", note);
+    }
+  } else {
+    params.set("mode", "subscription");
+    params.set("line_items[0][price_data][product_data][name]", donationProductName(months));
+    params.set("line_items[0][price_data][recurring][interval]", "month");
+    params.set("custom_text[submit][message]", donationCheckoutMessage(months));
+    params.set("metadata[cepa_duration_months]", months);
+    params.set("metadata[cepa_monthly_amount_cents]", String(amountInCents));
+    params.set("subscription_data[metadata][cepa_duration_months]", months);
+    params.set("subscription_data[metadata][cepa_monthly_amount_cents]", String(amountInCents));
+    if (note) {
+      params.set("subscription_data[metadata][cepa_note]", note);
+    }
+  }
+
+  const session = await stripeRequest(env, "/checkout/sessions", {
+    method: "POST",
+    body: params,
+  });
+
+  return json({ url: session.url }, request, env);
+}
 
 async function createMonthlyDonation(request, env) {
   const body = await request.json();

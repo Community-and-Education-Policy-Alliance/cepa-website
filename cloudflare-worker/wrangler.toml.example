@@ -1,4 +1,7 @@
-name = "cepa-donations"
+# The production Worker (with the Stripe secrets attached) is named "damp-bird-b203"
+# and serves https://damp-bird-b203.cepamd.workers.dev. Deploying under any other
+# name creates a NEW Worker without the secrets — don't rename.
+name = "damp-bird-b203"
 main = "src/worker.js"
 compatibility_date = "2026-04-29"
 
