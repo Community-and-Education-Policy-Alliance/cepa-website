@@ -292,6 +292,13 @@ p  { margin-bottom: 1rem; }
 }
 .form-status.success { color: #1a7f37; }
 
+/* ── EIN (anchor wrap defeats iOS tel detection) ── */
+a.ein {
+  color: inherit;
+  text-decoration: none;
+  pointer-events: none;
+}
+
 /* ── Footer ─────────────────────────────────────── */
 footer {
   background: #f7f7f7;
@@ -307,9 +314,9 @@ footer strong { color: #1a5276; }
 /* ── Responsive ─────────────────────────────────── */
 @media (max-width: 600px) {
   h1 { font-size: 1.5rem; }
+  .amount-grid { grid-template-columns: repeat(2, 1fr); }
   .hero { padding: 2.5rem 0 1.5rem; }
   .momentum-banner p { font-size: 1.1rem; }
   section { padding: 2rem 0; }
   .donate-grid { grid-template-columns: 1fr; }
-  .board-list li { display: block; }
 }
