@@ -73,6 +73,25 @@ p  { margin-bottom: 1rem; }
   opacity: 0.9;
   margin-top: 0.35rem;
 }
+.momentum-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.momentum-stat .n {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.momentum-stat .k {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+  text-transform: uppercase;
+}
 
 /* ── Progress ───────────────────────────────────── */
 .progress { padding: 1.75rem 0 0.5rem; }
@@ -125,7 +144,14 @@ p  { margin-bottom: 1rem; }
   font-weight: 700;
 }
 
-/* ── Summer Fundraiser ──────────────────────────── */
+/* ── Beyond Wootton ─────────────────────────────── */
+.beyond-wootton {
+  background: #f2f7fb;
+  border-top: 1px solid #e0e0e0;
+  padding: 2.5rem 0;
+}
+
+/* ── Help Fund the Discovery ────────────────────── */
 .fundraiser {
   background: #f2f7fb;
   border-top: 1px solid #e0e0e0;
@@ -133,6 +159,8 @@ p  { margin-bottom: 1rem; }
   padding: 2.5rem 0;
 }
 .fundraiser h3 { margin-top: 1.75rem; }
+.fundraiser ul { margin: 0.75rem 0 1rem 1.5rem; }
+.fundraiser li { margin-bottom: 0.4rem; }
 
 /* ── Donate Cards ───────────────────────────────── */
 .trust-line {
@@ -317,6 +345,8 @@ footer strong { color: #1a5276; }
   .amount-grid { grid-template-columns: repeat(2, 1fr); }
   .hero { padding: 2.5rem 0 1.5rem; }
   .momentum-banner p { font-size: 1.1rem; }
+  .momentum-stat .n { font-size: 1.15rem; }
+  .momentum-stat .k { font-size: 0.68rem; }
   section { padding: 2rem 0; }
   .donate-grid { grid-template-columns: 1fr; }
 }
